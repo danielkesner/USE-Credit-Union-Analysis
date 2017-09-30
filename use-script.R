@@ -59,8 +59,9 @@ net.income.after.expenses <- net.income - total.expenses
 total.cash.flow <- c(net.income, all.expenses, net.income.after.expenses)
 
 # Plot me daddy
-barplot(total.cash.flow, main = "Income/Expenses for August", ylab = "Amount ($USD)", names.arg = c("Income", "Lunch expenses", "Other Expenses", "Total Expenses", "Net Income"), 
+plot <- barplot(total.cash.flow, main = "Income/Expenses for August", ylab = "Amount ($USD)", names.arg = c("Income", "Lunch expenses", "Other Expenses", "Total Expenses", "Net Income"), 
         col = c("darkblue", "red", "goldenrod3", "tan4", "springgreen"), ylim = c(0, 5000))
+text(x = plot, y = total.cash.flow, label = total.cash.flow, pos = 3, cex = 0.8, col ="red")
 
 # Clean up workspace
 rm(i)
